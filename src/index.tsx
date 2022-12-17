@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-//Arrow foo
-const Title = () => <h1>Hello arrow foo component</h1>
+type TitleProps = { // название пропсов пишем с большой буквы(PascalCase)
+    subtitle: string | number  // 2) Описали тип данных
+}
+
+const Title = (props: TitleProps) => { // 1) Описали данные
+    return (<h1>Hello {props.subtitle}</h1>) // props - это обьект, пишем props.имя-ключа  
+}
 const Content = () => {
     return (
         <>
@@ -14,9 +19,10 @@ const Content = () => {
 }
 
 const App = () => {
-    return (
+    return ( // 3) Вывели данные
         <>
-            <Title />
+            <Title subtitle="Anime" />
+            <Title subtitle={100} />
             <Content />
         </>
     )
