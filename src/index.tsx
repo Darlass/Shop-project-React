@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Content, { Subcontent } from './Content' // 2.Обязательно импортируем
+import Content from './Content' // 2.Обязательно импортируем
 
 
 type TitleProps = { // название пропсов пишем с большой буквы(PascalCase)
@@ -16,8 +16,7 @@ const App = () => {
     return ( // 3) Вывели данные 3. Выводим компонент на страницу
         <>
             <Title subtitle="my stugglings" />
-            <Content />
-            <Subcontent />
+            <Content p1="Me" p2="You" />
         </>
     )
 }
