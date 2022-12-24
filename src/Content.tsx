@@ -1,4 +1,4 @@
-import './Content.css'
+import './Content.scss'
 
 type ContentProps = {
     p1: string
