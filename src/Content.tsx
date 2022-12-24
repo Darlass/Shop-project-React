@@ -1,4 +1,4 @@
-import './Content.scss'
+import classes from './Content.module.scss'
 
 type ContentProps = {
     p1: string
@@ -7,7 +7,7 @@ type ContentProps = {
 const Content = ({ p1, p2 }: ContentProps) => {
     return (
         <>
-            <p className="love">{p1}</p>
+            <p className={`${classes.love} ${classes['font']}`}>{p1}</p>
             <p>{p2}</p>
         </>
     )
