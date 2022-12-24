@@ -16,7 +16,7 @@ const App = () => {
     return ( // 3) Вывели данные 3. Выводим компонент на страницу
         <>
             <Title subtitle="my stugglings" />
-            <Content p1="Me" p2="You" />
+            <Content p1="My love always for" p2="You" />
         </>
     )
 }
