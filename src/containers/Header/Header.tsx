@@ -10,7 +10,7 @@ import { purple } from '@mui/material/colors';
 type Props = {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" style={{
+        <AppBar position="static" sx={{
             backgroundColor: 'purple',
         }}>
             <Container maxWidth="lg">
