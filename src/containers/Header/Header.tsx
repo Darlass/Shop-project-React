@@ -5,14 +5,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import { purple } from '@mui/material/colors';
+import './Header.scss'
 
 type Props = {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" sx={{
-            backgroundColor: 'purple',
-        }}>
+        <AppBar position="static" className="app-bar">
             <Container maxWidth="lg">
                 <Toolbar>
                     <IconButton
