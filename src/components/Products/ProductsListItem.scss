@@ -1,0 +1,27 @@
+.product-list-item {
+    padding: 15px;
+    border: 2px solid rgb(77, 0, 128);
+    .product-title {
+        margin: 5px;
+        font-size: 24px;
+        color: rgb(77, 0, 128);
+    }
+    .product-desc {
+        margin: 5px;
+        font-size: 20px;
+    }
+    .product-features {
+        margin: 10px;
+        font-size: 18px;
+        span {
+            font-weight: bold;
+        }
+    }
+    .product-price {
+        font-size: 20px;
+    }
+}
+.but-wrap {
+    display: flex;
+    justify-content: center;
+}
