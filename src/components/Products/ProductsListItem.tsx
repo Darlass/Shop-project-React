@@ -1,13 +1,15 @@
 import { Button, Card, CardActions, CardContent } from "@mui/material";
 import './ProductsListItem.scss'
 
-type Props = {};
+type Props = {
+    title: string,
+};
 
 const ProductsListItem = (props: Props) => {
     return <>
         <Card className="product-list-item">
             <CardContent>
-                <h4 className="product-title">Iphone 14</h4>
+                <h4 className="product-title">{props.title}</h4>
                 <p className="product-desc">Telephone from brand Apple. One of the best in the world.</p>
                 <div className="product-features"><span>Type:</span> phone</div>
                 <div className="product-features"><span>Capacity:</span> 64 gb</div>
