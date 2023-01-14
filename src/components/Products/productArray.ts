@@ -1,10 +1,3 @@
-type productsArray = {
-    title:string
-    desc:string
-    type:string
-    capacity:string
-    price:number
-}
 
 const productsArray = [
     {

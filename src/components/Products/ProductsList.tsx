@@ -1,26 +1,35 @@
-import ProductsListItem from "./ProductsListItem";
-import { Grid } from "@mui/material";
-import productsArray from "./productArray";
+import ProductsListItem from './ProductsListItem'
+import { Grid } from '@mui/material'
+import productsArray from './productArray'
 
-type Props = {};
+type productsArray = {
+    title: string
+    desc: string
+    type: string
+    capacity: string
+    price: number
+}
+
+type Props = {}
 
 const ProductsList = (props: Props) => {
-    return <>
-        <Grid container direction="row" alignItems="center" spacing={4} >
-            <Grid item xs={12} sm={6} md={4}>
-                <ProductsListItem title={productsArray[0].title} />
+    return (
+        <>
+            <Grid container direction="row" alignItems="center" spacing={4}>
+                {productsArray.map((product: productsArray) => (
+                    <Grid item xs={12} sm={6} md={4}>
+                        <ProductsListItem
+                            title={product.title}
+                            desc={product.desc}
+                            type={product.type}
+                            capacity={product.capacity}
+                            price={product.price}
+                        />
+                    </Grid>
+                ))}
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <ProductsListItem title={productsArray[1].title} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <ProductsListItem title={productsArray[2].title} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-                <ProductsListItem title={productsArray[3].title} />
-            </Grid>
-        </Grid>
-    </>
-};
+        </>
+    )
+}
 
-export default ProductsList;
+export default ProductsList
