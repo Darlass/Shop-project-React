@@ -6,6 +6,7 @@ const productsArray = [
         type:"phone",
         capacity:"64",
         price: 500,
+        image:"images/iphone-black.jpg"
     },
     {
         title:"iPhone 12",
@@ -13,6 +14,7 @@ const productsArray = [
         type:"phone",
         capacity:"36",
         price: 480,
+        image:"images/iphone-green.jpg"
     },
     {
         title:"iPhone 13",
@@ -20,6 +22,7 @@ const productsArray = [
         type:"phone",
         capacity:"128",
         price: 800,
+        image:"images/iphone-red.jpg"
     },
     {
         title:"iPhone 14 Pro",
@@ -27,6 +30,7 @@ const productsArray = [
         type:"phone",
         capacity:"256",
         price: 1200,
+        image:"images/iphone-white.jpg"
     },
     {
         title:"iPhone 11",
@@ -34,6 +38,7 @@ const productsArray = [
         type:"phone",
         capacity:"128",
         price: 460,
+        image:"images/iphone-pink.jpg"
     },
     {
         title:"iPhone Xr",
@@ -41,6 +46,7 @@ const productsArray = [
         type:"phone",
         capacity:"64",
         price: 420,
+        image:"images/iphone-blue.jpg"
     },
 ]
 

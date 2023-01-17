@@ -20,6 +20,14 @@
     .product-price {
         font-size: 20px;
     }
+    .product-img {
+        margin-bottom: 20px;
+        text-align: center;
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
 }
 .but-wrap {
     display: flex;
