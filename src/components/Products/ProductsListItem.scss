@@ -32,6 +32,9 @@
         display: flex;
         margin: 15px 0 15px 0;
         justify-content: center;
+        input {
+            text-align: center;
+        }
     }
 }
 .but-wrap {
