@@ -28,6 +28,11 @@
             height: auto;
         }
     }
+    .product-quantity {
+        display: flex;
+        margin: 15px 0 15px 0;
+        justify-content: center;
+    }
 }
 .but-wrap {
     display: flex;
