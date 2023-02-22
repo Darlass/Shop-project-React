@@ -23,10 +23,11 @@ class ProductsListItem extends Component<Props, State>{
         super(props)
         this.state = {
             count: 1,
-            color: "green",
+            color: 'green',
         }
         this.onIncrementClick = this.onIncrementClick.bind(this)
         this.onDecrementClick = this.onDecrementClick.bind(this)
+        this.changeColor = this.changeColor.bind(this)
     }
 
     onIncrementClick = () => {
@@ -40,9 +41,9 @@ class ProductsListItem extends Component<Props, State>{
         }))
     }
     changeColor() {
-        this.setState({
-            color: "red"
-        })
+        this.setState((prevState: State) => ({
+            color: prevState.color === 'green' ? 'red' : 'green'
+        }))
     }
 
     render() {
