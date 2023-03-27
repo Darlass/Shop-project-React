@@ -1,4 +1,5 @@
 import { Button, Card, CardActions, CardContent, TextField } from "@mui/material";
+import { useState } from 'react'
 import './ProductsListItem.scss'
 
 type Props = {
@@ -11,6 +12,14 @@ type Props = {
 };
 
 const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) => {
+
+    const [count, setCount] = useState<number>(1) // конст массив -> [название стейта, функция для стейта с ключевым словом set+Название стейта]
+    const onIncrement = () => {
+        setCount((prevState: number) => prevState + 1)
+    }
+    const onDecrement = () => {
+        setCount((prevState: number) => prevState - 1)
+    }
     return <>
         <Card className="product-list-item">
             <CardContent>
@@ -23,9 +32,9 @@ const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) 
                 <div className="product-features"><span>Capacity:</span>{capacity} gb</div>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button variant="outlined">-</Button>
-                    <TextField size="small" value={1} />
-                    <Button variant="outlined">+</Button>
+                    <Button variant="outlined" onClick={() => onDecrement()}>-</Button>
+                    <TextField size="small" value={count} />
+                    <Button variant="outlined" onClick={() => onIncrement()}>+</Button>
                 </div>
             </CardContent>
             <CardActions className="but-wrap">
