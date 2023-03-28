@@ -21,18 +21,6 @@ const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) 
         setCount((prevState: number) => prevState - 1)
     }
 
-    const [color, setColor] = useState<string>(`green`)
-    const changeColor = () => {
-        setColor((prevState: string) => { //  скороченный варинат с тернарными операторами prevState === `green` ? `red` : `green`
-            if (prevState === `green`) {
-                return `red`
-            } else {
-                return `green`
-            }
-        })
-    }
-
-
     return <>
         <Card className="product-list-item">
             <CardContent>
@@ -43,11 +31,9 @@ const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) 
                 <p className="product-desc">{desc}</p>
                 <div className="product-features"><span>Type:</span>{type}</div>
                 <div className="product-features"><span>Capacity:</span>{capacity} gb</div>
-                <p className="product-features"> <span>Color:</span>{color}</p>
-                <button onClick={() => changeColor()}>Change color</button>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button variant="outlined" onClick={() => onDecrement()}>-</Button>
+                    <Button variant="outlined" onClick={() => onDecrement()} disabled={count <= 1}>-</Button>
                     <TextField size="small" value={count} />
                     <Button variant="outlined" onClick={() => onIncrement()}>+</Button>
                 </div>
