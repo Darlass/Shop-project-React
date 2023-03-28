@@ -13,13 +13,26 @@ type Props = {
 
 const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) => {
 
-    const [count, setCount] = useState<number>(1) // конст массив -> [название стейта, функция для стейта с ключевым словом set+Название стейта]
+    const [count, setCount] = useState<number>(0) // конст массив [название стейта, функция для стейта с ключевым словом set+Название стейта]
     const onIncrement = () => {
         setCount((prevState: number) => prevState + 1)
     }
     const onDecrement = () => {
         setCount((prevState: number) => prevState - 1)
     }
+
+    const [color, setColor] = useState<string>(`green`)
+    const changeColor = () => {
+        setColor((prevState: string) => { //  скороченный варинат с тернарными операторами prevState === `green` ? `red` : `green`
+            if (prevState === `green`) {
+                return `red`
+            } else {
+                return `green`
+            }
+        })
+    }
+
+
     return <>
         <Card className="product-list-item">
             <CardContent>
@@ -30,6 +43,8 @@ const ProductsListItem = ({ title, desc, type, capacity, price, image }: Props) 
                 <p className="product-desc">{desc}</p>
                 <div className="product-features"><span>Type:</span>{type}</div>
                 <div className="product-features"><span>Capacity:</span>{capacity} gb</div>
+                <p className="product-features"> <span>Color:</span>{color}</p>
+                <button onClick={() => changeColor()}>Change color</button>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
                     <Button variant="outlined" onClick={() => onDecrement()}>-</Button>
