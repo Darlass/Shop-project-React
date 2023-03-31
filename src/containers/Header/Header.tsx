@@ -1,15 +1,20 @@
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
+import Container from '@mui/material/Container'
 import './Header.scss'
-import Menu from 'components/Menu/Menu';
-import logo from 'assets/logo.svg';
+import Menu from 'components/Menu/Menu'
+import logo from 'assets/logo.svg'
 import CartHeader from 'components/CartHeader/CartHeader'
 
-type Props = {}
-const Header = (props: Props) => {
+type Props = {
+    cartData: {
+        totalCount: number
+        totalPrice: number
+    }
+}
+const Header = ({ cartData }: Props) => {
     return (
         <AppBar position="static" className="app-bar">
             <Container maxWidth="lg">
@@ -23,14 +28,14 @@ const Header = (props: Props) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <div className='logo'>
+                    <div className="logo">
                         <img src={logo} alt="Logo" />
                     </div>
                     <Menu />
-                    <CartHeader />
+                    <CartHeader cartData={cartData} />
                 </Toolbar>
             </Container>
-        </AppBar >
+        </AppBar>
     )
 }
-export default Header 
+export default Header

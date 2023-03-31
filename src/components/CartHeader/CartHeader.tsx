@@ -1,11 +1,20 @@
+type Props = {
+    cartData: {
+        totalCount: number
+        totalPrice: number
+    }
+}
 
-
-type Props = {};
-
-const CartHeader = (props: Props) => {
-    return <div>
-        <div>0</div>
-        <div>$ 0</div>
-    </div>;
-};
-export default CartHeader;
+const CartHeader = ({ cartData }: Props) => {
+    return (
+        <div className="cart-header">
+            <div className="cart-item">
+                <span>Quantity</span> {cartData.totalCount}
+            </div>
+            <div className="cart-item">
+                <span>Price</span> ${cartData.totalPrice}
+            </div>
+        </div>
+    )
+}
+export default CartHeader
