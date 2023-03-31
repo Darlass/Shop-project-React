@@ -10,14 +10,20 @@ type CartDataProps = {
 }
 const App = () => {
     const [cartData, setCartData] = useState<CartDataProps>({
-        totalCount: 10,
-        totalPrice: 110,
+        totalCount: 0,
+        totalPrice: 0,
     })
-
+    const addToCart = (count: number, price: number) => {
+        setCartData((prevState: CartDataProps) => ({
+            totalCount: prevState.totalCount + count,
+            totalPrice: prevState.totalPrice + count * price,
+        }))
+    }
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
+            <button onClick={() => addToCart(2, 500)}>Add to cart</button>
             <Main />
         </StyledEngineProvider>
     )
