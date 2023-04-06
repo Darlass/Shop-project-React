@@ -1,16 +1,22 @@
-import { Typography } from "@mui/material";
-import ProductsList from "components/Products/ProductsList";
+import { Typography } from '@mui/material'
+import ProductsList from 'components/Products/ProductsList'
 
-type Props = {};
+type Props = {
+    addToCart: (count: number, price: number) => void
+}
 
-const Home = (props: Props) => {
+const Home = ({ addToCart }: Props) => {
     return (
         <>
-            <Typography variant="h4" align="center" sx={{ marginBottom: '20px' }}>
+            <Typography
+                variant="h4"
+                align="center"
+                sx={{ marginBottom: '20px' }}
+            >
                 List of products
             </Typography>
-            <ProductsList />
+            <ProductsList addToCart={addToCart} />
         </>
-    );
-};
-export default Home;
+    )
+}
+export default Home

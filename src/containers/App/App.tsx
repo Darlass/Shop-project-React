@@ -23,8 +23,7 @@ const App = () => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            <button onClick={() => addToCart(2, 500)}>Add to cart</button>
-            <Main />
+            <Main addToCart={addToCart} />
         </StyledEngineProvider>
     )
 }

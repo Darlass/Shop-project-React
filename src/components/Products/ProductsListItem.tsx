@@ -15,6 +15,7 @@ type Props = {
     capacity: string
     price: number
     image: string
+    addToCart: (count: number, price: number) => void
 }
 
 const ProductsListItem = ({
@@ -24,6 +25,7 @@ const ProductsListItem = ({
     capacity,
     price,
     image,
+    addToCart,
 }: Props) => {
     const [count, setCount] = useState<number>(0) // конст массив [название стейта, функция для стейта с ключевым словом set+Название стейта]
     const onIncrement = () => {
@@ -69,7 +71,12 @@ const ProductsListItem = ({
                     </div>
                 </CardContent>
                 <CardActions className="but-wrap">
-                    <Button variant="outlined">Add to cart</Button>
+                    <Button
+                        variant="outlined"
+                        onClick={() => addToCart(count, price)}
+                    >
+                        Add to cart
+                    </Button>
                 </CardActions>
             </Card>
         </>
